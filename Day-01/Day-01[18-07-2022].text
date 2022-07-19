@@ -1,0 +1,99 @@
+Day-01[18-07-2022]:
+==================
+	Good Morning to All.....
+
+
+	programiz.com
+
+	Python:
+	=======
+	variables
+	input and output
+	operators
+	keywords
+	conditional statements
+	Loops
+	Inner Loops (nested loops)
+
+	Python Checking:
+	================
+	> cmd
+	> python -V
+
+	Python Downloads:
+	=================
+	> google chrome
+	> python.org
+	> downloads
+	> Operating system
+	> click
+	> 2 columns
+		>> stable release [Completed Development]
+		>> pre release [Incomplete Development]
+	> cntr + f
+	> python 3.xxx
+	> Executeable file => Clicked
+
+	Python Installation:
+	====================
+	> We need to navigate for python software location path
+	> Double
+	> "yes"
+	> 2 options and 2 checkboxes
+		> Install now => Default path
+			c:\user\xxx\AppData\Local\Programs\Python\Python3x\Python.exe
+
+		> custom installation => user defined location
+		** checkboxes:
+		> user permissions
+		> Add python path 
+	> click on next to finish the installation
+
+	Pip:
+	====
+	> To install third party packages we need to install by using the pip command
+	> Command to check pip version
+		>> pip -V
+
+	Pip Upgrade:
+	============
+	> cmd
+	> python -m pip install --upgrade pip
+	> pip -V
+		
+	Django Installation:
+	====================
+	> To install django we need to check the python and pip either it is installed or not in your system
+	> open command prompt then install django by using the command
+		>> pip install django==3.0
+					or
+		>> pip install django [Latest Version]
+	> We can check whether the django is installed or not by using the command
+		>> django-admin --version
+
+	Project Creation:
+	=================
+	> Open a location where we can create a project in command prompt then we need to type a command such as
+		>> django-admin startproject "projectname"
+		Ex:
+		>> django-admin startproject CSEB
+	> Folder will be created with "CSEB" then navigate into it. We can observe CSEB and manage.py
+		>> CSEB => [Admin App]
+		>> manage.py => services file
+
+	Project Execution:
+	==================
+	> Navigate to a location where manage.py file exists in command prompt then type a command as
+		>> manage.py runserver
+					or
+		>> python manage.py runserver
+		If manage.py file cant run then we need to mention the interpreter name to execute the .py files
+	> If port number blocks we need to change while running a server the command is
+		>> manage.py runserver "portnumber"
+		Ex:
+		>> manage.py runserver 1245
+	> After running the server with different port numbers then we need to use the port number along with localhost in a browser
+		>> localhost:"portnumber"
+		Ex:
+		>> localhost:1245
+	> After passing the localhost with port numbers then it will displays the default ".html page" that is not desinged by us
