@@ -7,3 +7,8 @@ Web Development Using Django for 2nd Years
   - Installation of Django,Version Check
   - Project Creation and its files overview
   - Running of a Project
+
+## Dy-02(19-07-2022):
+  - Userapp Creation and Configuration to run our own(user) app
+  - Userapp Files overview
+  - Dynamic Url Mapping with single,two or n number of values passing in url
