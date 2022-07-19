@@ -1,0 +1,60 @@
+Day-02[19-07-2022]:
+===================
+	Good Morning to All..
+
+	User App Creation:
+	==================
+	> Open cmd where manage.py file exists then we need to type a command such as
+		>> manage.py startapp "appname"
+		Ex:
+		>> manage.py startapp gistapp
+	> App will be created in project folder in that we can observer 2 folders and 1 file such as
+		>> CSEB => [AdminApp]
+		>> gistapp => [UserApp]
+	> In Userapp we can observer files that is
+		>> init => consider this file as a python file for an interpreter
+		>> views => Logic will be created in this file
+		>> admin => If admin need to access user table then we need to configure in this file
+		>> models => To create a table then we need to implement in this file
+		>> test => For testing such as [Unit,black box]we can use it in this file for form validations
+		>> apps => To access the app configurations
+	> After Creating User app we need to configure in settings.py such as in INSTALLED_APPS list data type variable
+		ex:
+			INSTALLED_APPS =[
+				....,
+				.....,
+				'appname',
+			]
+
+	Userapp sample response configuration:
+	=====================================
+	> We need to create an url in urls.py
+	> In Urls it consists of different paths and to create a path we need to know about path functionalities
+		>>path("urlname",modulename.functionname),
+		>>path('',views.sd),
+	> To access the function from userapp then we need to import views in userapp
+		>> from userapp import views
+		>> from gistapp import views
+	> We are importing the views from userapp to admin app in urls.py
+	> After importing we need to implement the logic in views.py exists in userapp
+	> To send a response we need to use http response from a package such as
+		>> from django.http import HttpResponse
+	> We are importing HttpResponse class from http module so we are retuning some string in it such as
+		def functionname(self):
+			return HttpResponse("some string")
+	> After implementing the logic in views then we need to run server and then need to check it in browser
+
+	Dynamic Url Mapping:
+	====================
+	> In mapping of values from url to views we are sending the data from url to views such as
+		In path:
+		========
+			path("urlname/<str:variablename>/",module.functionname),
+		Here we are passing single value from urls to views then in views we need to access it in the format of second parameter value
+		In Views:
+		=========
+			def functionname(self,variablename):
+				return HttpResponse("string {}".format(variablename))
+	> In Dynamic url mapping we can send n number of values such as
+		path("urlname/<str:variable1>/<int:variable2>/...",modulename.functionname),
+	
