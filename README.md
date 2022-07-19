@@ -11,4 +11,5 @@ Web Development Using Django for 2nd Years
 ## Dy-02(19-07-2022):
   - Userapp Creation and Configuration to run our own(user) app
   - Userapp Files overview
+  - Http Request and response
   - Dynamic Url Mapping with single,two or n number of values passing in url
