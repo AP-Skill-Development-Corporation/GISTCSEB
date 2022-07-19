@@ -97,3 +97,11 @@ Day-01[18-07-2022]:
 		Ex:
 		>> localhost:1245
 	> After passing the localhost with port numbers then it will displays the default ".html page" that is not desinged by us
+
+	Project Files Overview:
+	=======================
+	>> init => Try to consider this file also as a python file in interpreter
+	>> urls => All urls will be checked in this file either it exists the urlname or not
+	>> settings => All configurations like debug,secretkey,Installation of apps,Templates => Only .html files,database,static files[css,js,jquery,images,audio and video]
+	>> wsgi [Web Socket Gateway Interface] it helps in development to send request and responses
+	>> asgi [Asynchronous Gateway Interface] it hepls in development for sending and requesting the responses
