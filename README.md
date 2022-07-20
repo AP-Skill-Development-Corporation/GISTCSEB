@@ -8,8 +8,14 @@ Web Development Using Django for 2nd Years
   - Project Creation and its files overview
   - Running of a Project
 
-## Dy-02(19-07-2022):
+## Day-02(19-07-2022):
   - Userapp Creation and Configuration to run our own(user) app
   - Userapp Files overview
   - Http Request and response
   - Dynamic Url Mapping with single,two or n number of values passing in url
+
+## Day-03(20-07-2022):
+  - Dynamic Url mapping with templates
+  - Templates Folder Creation
+  - Interface between urls to views and then views to templates
+  - Templates with inline and internal stylings
