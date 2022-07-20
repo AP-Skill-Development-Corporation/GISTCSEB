@@ -1,0 +1,37 @@
+Day-03[20-07-2022]:
+===================
+	Good Morning to All..
+
+	url => views => httpresponse(html tag)
+	url => views => httpresponse(inline styling)
+	url => views => httpreponse(internal styling with html page)
+	url => views => httpresponse(html structure)
+
+	Templates Folder Creation:
+	==========================
+	> In templates folder we need to create only .html files
+	> We need to create templates folder in userapp in that we need to create another folder to store .html files
+	> In templates we need to display the values that is sent from url to views and then views to templates[.html file]
+		urls.py
+		=======
+		path("urlname/<str:variablename1>/",modulename.functionname),
+		views.py
+		========
+		def functionname(self,variablename1):
+			return render(self,'.html file',{'keyname':variablename})
+		.htmlfile
+		=========
+		> To access the data from views we need to use keyname but we need to follow Django template language of a variable like 
+			{{variablename}}
+					or
+			{{keyname}} => It is accessed from views.py
+
+	render:
+	=======
+	> To access .html files we are using render to display the .html file
+	> In render it consists of 3 parameters they are
+		render(self,'.html file',dictionary)
+		We need to send the data from views to .html in the form of dictionary format
+	> To display the values then we need to use dtl language
+	> We can use internal styling in .html file
+	
