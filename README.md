@@ -19,3 +19,9 @@ Web Development Using Django for 2nd Years
   - Templates Folder Creation
   - Interface between urls to views and then views to templates
   - Templates with inline and internal stylings
+
+## Day-04(21-07-2022):
+  - Javascript response with alert and prompt from views
+  - Internal styling to a form temporarily by using inspect element
+  - Interface between controller to templates
+  - Data rendering from controller to templates and then templates to controller and to another template
