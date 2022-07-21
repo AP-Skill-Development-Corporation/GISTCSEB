@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration</title>
+	<style type="text/css">
+		h3 
+		{
+			margin-left: 35%;
+		    margin-right: 35%;
+		    background-color: burlywood;
+		    text-align: center;
+		    color: currentColor;
+		    border-radius: 10px;
+		    border: 1px solid green;
+		}
+		form
+		{
+			margin-left: 35%;
+		    margin-right: 35%;
+		    background-color: cadetblue;
+		    padding: 20px;
+		    border: 1px solid red;
+		    border-radius: 10px;
+		    height: 105px;
+		}
+		button
+		{
+			float: right;
+		    margin-top: 5px;
+		    margin-bottom: 5px;
+		    background-color: deeppink;
+		    padding: 5px;
+		    color: white;
+		    border: 1px solid darkblue;
+		}
+	</style>
+</head>
+<body>
+	<h3>Student Registration</h3>
+<form method="post">
+	{% csrf_token %}
+	<label>Roll number: </label>
+	<input type="text" name="r"><br/>
+	<label>Password: </label>
+	<input type="password" name="p"><br/>
+	<label>Email: </label>
+	<input type="email" name="e"><br/>
+	<label>Select Year: </label>
+	<select name="y">
+		<option value="0">--Select Your Year--</option>
+		<option value="1">1st Year</option>
+		<option value="2">2nd Year</option>
+		<option value="3">3rd Year</option>
+		<option value="4">4th Year</option>
+	</select><br/>
+	<button type="submit">Create</button>
+</form>
+</body>
+</html>

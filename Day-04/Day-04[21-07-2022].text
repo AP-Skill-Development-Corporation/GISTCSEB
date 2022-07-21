@@ -1,0 +1,49 @@
+Day-04[21-07-2022]:
+===================
+	Good Morning to All..
+
+	urls => views => templates
+	> By httpresponse we used javascript like
+		HttpResponse("<script>alert('Hi Welcome');</script>")
+		Here we had used alert to display some information to a user
+	> Dynamic value from url to views and then views to httpresponse such as
+		In urls:
+		========
+			>> path('urlname/<datatype:variablename>/',modulename.functionaname)
+			>> path("p/<str:g>/",views.ghj)
+		In views:
+		=========
+			>> def functionname(self,variablename):
+					return HttpResponse("<script>alert('Hi Welcome {}')</script>".format(variablename))
+			>> def ghj(s,g):
+					return HttpResponse("<script>alert('Hi Welcome {}')</script>".format(g))
+	> Dynamic value from javascript prompt
+		>> def srt(self):
+				return HttpResponse("<h3>Hi Welcome <span id='d'></span></h3><script>let z=prompt('enter username: ');document.getElementById('d').innerHTML=z;</script>")
+
+	> Page Design by using inspect element with temporary design to a html page we can desing by selecting the particular element in the elements tag of inspect element
+	> After selecting the element we can observe the style in right of the inspect there we can code the property and value to an element
+	> If page is refreshed then it will erase all design for a particular page for permament styling to a page we can store it in internal or else in external ways
+
+	Interface between Controller and templates:
+	===========================================
+	> In urls we are not sending any data to views here we are implementing the forms concept to enter the data into it
+	> In forms it consists of 2 methods they are:
+		>> get => By Default the method will be get to a form if method is not mentioned in the form
+			   => get stores little amount of data to send from forms to a server
+			   => It displays the sensitive information in url of a page
+		>> post	=> Here we can send large data to a server
+				=> It doesnt displays the sensitive information in url of a page
+				=> While sending data to a server the method to be mentioned as post and the token is accessed in the form tag such as in the form of dtl language
+
+				{% csrf_token %}
+	> Here the data will be sent from forsm to a views when the name in forms are to be mentioned for each input field in the form
+	> It stores the data in local variable of a form value of each input field and then the data to be sent from views to another template in the form of dictionary
+		In views:
+		=========
+			def dty(t):
+				if t.method == "POST":
+					localvariablename = t.POST['inputfieldname']
+					return render(t,'.htmlfile',{'keyname':localvariablename,'keyname1':localvariablename1,.....})
+				return render(t,'.html')
+	> In html we can access the values sent from views in the form of dtl language variable
