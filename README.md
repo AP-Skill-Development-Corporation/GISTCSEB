@@ -25,3 +25,15 @@ Web Development Using Django for 2nd Years
   - Internal styling to a form temporarily by using inspect element
   - Interface between controller to templates
   - Data rendering from controller to templates and then templates to controller and to another template
+
+## Day-05(22-07-2022):
+  - ORM Queries
+  - CRUD by using ORM Queries in shell
+  - Bootstrap 4 and Grid system Overview
+  - Superuser creation and roles of users
+
+## Day-06(23-07-2022):
+  - Template blocks
+  - Forms Concepts with widgets
+  - Form Validations and Messages Concept
+  - User Registration and Authentication
