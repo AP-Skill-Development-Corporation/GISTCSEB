@@ -1,0 +1,21 @@
+{% extends 'html/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card col-md-6 mx-auto shadow-lg">
+    	<h3 class="bg-warning m-2 p-2 border rounded text-light text-center">Register</h3>
+    	<div class="card-body">
+    		<form method="post">
+    			{% csrf_token %}
+    			{% for i in t %}
+    				{{i}}
+    			{% endfor %}
+    			<div class="row">
+    				<a href="#" class="btn btn-outline-danger col-sm m-2 p-2">Existing User</a>
+    				<input type="submit" value="Create" class="btn btn-outline-success m-2 p-2 col-sm">
+    			</div>
+    		</form>
+    	</div>
+    </div>
+</div>
+{% endblock %}
