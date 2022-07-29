@@ -1,0 +1,233 @@
+Day-05[22-07-2022]:
+===================
+	Good Morning to All...
+
+	Form Methods:
+	=============
+	> GET
+	> POST
+		GET:
+		====
+		> By default the form method is get
+		> While submitting the form it displays the sensitive information in browser url
+		> It stores less amount of data to submit to a file
+
+		POST:
+		=====
+		> Secure Form submission is POST because it doesnt display the sensitive information to a user
+		> In this we need to use "{% csrf_token %}" to send the data from html file to server i.e., views
+		> It stores large amount of data that cant be viewed in the url of a browser
+
+	Form Configuration:
+	===================
+	> If we need to send the data from form we need to use the method such as either "get" or "post"
+	> In form for every input we need to use names to access or to submit the values from the names to a server
+	> After submitting the form then we need to access the from dat to server for that we need to check the method first either it is "get" or "post"
+	> In views we need to store the form data to a local variable by accessing the vale from a post method from a form such as
+		ex:
+			def functionname(re):
+				if re.method == "POST":
+					d = re.POST['n']
+					render(re,'../.html',{'key':value})
+				return render(re,'../.html')
+	> To access the data from views we need to send the data in dictonary format to a .html file
+	> To access the data in .html we need to access by using DTL Language such as "{{keyname}}"
+
+	Bootstrap 4:
+	============
+	> To create responsive webpages
+	> To reduce human work for designing the .html file
+	> We can use one or more selector properties by using the class
+	> It has 2 modes to access 
+		> Online => need internet
+		> Offline => we need to download the zip file and to place it in static folder inside of css and vice-versa
+
+	Bootstrap Components:
+	=====================
+	> container => Provides space for left and right of web page
+	> container-fluid => It doesnt provide any space it fills entire width of html
+	> jumbotron => IT displays the data but background color will be in grey color
+	> grid system => To align the columns and to resize for all type of devices
+
+	Grid system:
+	============
+	> It consists of 12 columns
+	> Columns can be divided based on user specified columns
+	> Based on resolution of devices it has categorised in to 5 Devices reponsiveness they are:
+		>> xm => very small
+		>> sm => small
+		>> md => medium
+		>> lg => large
+		>> xl => extra large
+	> It consiste of columns and rows
+
+	Points:
+	=======
+	> Based on the pixels here bootstrap has assignined for each and every pixels so they categorised in to points they are from "1" to "5"
+	> for each and every point the pixels are changed based on user specification we need to use the points
+	> It can be accessed for any alignments
+
+	Margins:
+	========
+	> m => for all directions
+	> ml => margin left
+	> mr => margin right
+	> mt => margin top
+	> mb => margin bottom
+	> mx => margins for x axis [i.e., left and right]
+	> my => margins for y axis [i.e., top and bottom]
+
+	Paddings:
+	=========
+	> p => for all directions
+	> pl => padding left
+	> pr => padding right
+	> pt => padding top
+	> pb => padding bottom
+	> px => padding for x axis [i.e., left and right]
+	> py => padding for y axis [i.e., top and bottom]
+
+	Styling used in today class:
+	============================
+	> text-center
+	> bg-primary
+	> text-light
+	> border rounded
+	> shadow-lg
+	> btn btn-outline-primary
+	> col-sm
+	> card
+	Database:
+	=========
+	> To store the data temporarily for further actions like
+		>> Create
+		>> Read
+		>> Update
+		>> Delete
+
+	ORM [Object Relational Mapper]:
+	===============================
+	> Try these ORM Queries in shell it is a service in manage.py file
+	> First we need to create a class to create a table such as
+		>> class Classname(models.Model):
+			fieldname = models.datatype(attributes)
+	> Here in ORM we are using the different fields such as
+		>> CharField => text
+		>> DateField => date
+		>> FloatField => float values
+		>> TimeField => time
+		>> FileField => files
+		>> ImageField => images
+		So we can assign the data type based on the field names
+	> After completing the class name in models.py then we need to create an interfacing files to create a table
+	> To create an interfacing file then we need to type some commands in command prompt for first interfacing file we can observe the file name such as "0001_initial.py" and other file name based on alter of the data type or a fieldname in a class
+	> For creating an interfacing file we need to type the command such as
+		>> manage.py makemigrations
+	> After creating the interfacing file we need to update all those tavle or field by using the "migrate" command
+		>> manage.py migrate
+		Here all the migrations had done and our table also created with the name such as
+			>> "appname_classname"
+			In database we can observe the table in this format
+	> Finally the database with our own table has been created
+
+	ORM Queries:
+	============
+	> open command prompt where manage.py file exists
+	> Then we need to start the shell by using the command as
+		>> manage.py shell
+	> Here we need to import the classname to shell so the command is
+		>> from appname.models import classname
+	> Then the classname is imported if not then you are accessing the wrong package or module
+
+	Display fields:
+	===============
+	> In shell try to type command to dispaly fieldname which are created in class
+		>> classname.__doc__
+			or
+		>> classname._meta.get_fields()
+	> This two commands will displays the fields and its data types that are created for that class or table
+
+	Inserting a Record [Create]:
+	============================
+	> To insert a record we need to follow the procedures they are
+		>> save
+		>> create
+		>> bulk_create
+	> So the syntax to insert a record is
+		>> objectname = classname(fieldname=value,......)
+		>> objectname.save()
+		In save method we need to use save() for saving the record if not it will not insert into a database
+	> Create method doesnt require save method the syntax for create is
+		>> objectname = classname.objects.create(fieldname=value,.....)
+		So after executing this command it will insert record into a database
+	> Bulk create is used to insert single or more records by using the syntax such as
+		>> objectname = classname.objects.bulk_create([classname(fieldname=value,....),classname(fieldname=value,..),...])
+		Here the n number of records will save it in database so here also we didnt need any save method
+
+	Accesing a record[Reading]:
+	===========================
+	> To display a record we can use in different ways such as by accessing the single record or n number of records
+		>> get
+		>> filter
+		>> first
+		>> last
+		>> all
+	> get:
+		In get we need to access unique values if the record is not in a database it will displays as error
+		ex:
+			objectname = classname.objects.get(fieldname=value)
+	> filter:
+		In filter we can access duplicate values if the record is not in a database it returns empty
+		ex:
+			objectname = classname.objects.filter(fieldname=value)
+	> first:
+		In first it displays the first record of a database
+		ex:
+			objectname = classname.objects.first()
+	> last:
+		In last it displays the last record of a database
+		ex:
+			objectname = classname.objects.last()
+	> all:
+		It displays all data
+		ex:
+			objectname = classname.objects.all()
+	> slicing:
+		It can displays the data from and to
+		ex:
+			objectname = classname.objects.all()[start:stop]
+	> displaying particular field value
+		>> objectname = classname.objects.all()
+		>> objectname.fieldname
+	> Displaying n number of records by using loop
+		ex:
+			for iterationvariablename in objectname:
+				print(iterationvariablename.fieldname)
+
+	Update:
+	=======
+	> To update a record we need to use the command for that we need gto access the record by using get method
+		ex:
+		  objectname = classname.objects.get(fieldname=value)
+		  objectname.fieldname = value
+
+	Delete:
+	=======
+	> To Delete a record we need to use the command
+		ex:
+		  => Single record delete
+		  objectname = classname.objects.get(fieldname=value)
+		  objectname.delete()
+
+		  => Multiple records
+		  objectname = classname.objects.filter(fieldname=value)
+		  objectname.delete()
+
+		  => All data deletion in a table
+		  objectname = classname.objects.all()
+		  objectname.delete()
+
+		  => To delete record in a single row
+		  objectname = classname.objects.all().delete()
+
+	
